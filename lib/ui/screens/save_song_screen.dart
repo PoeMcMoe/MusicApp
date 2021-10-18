@@ -57,7 +57,7 @@ class _SaveSongScreenState extends State<SaveSongScreen> {
         children: [
           _buildMusicDataListView(widget.saveToMemory
               ? _musicBloc.audioDataContainer!.audioFileData
-              : _musicBloc.songsInFileSystem),
+              : _musicBloc.audioDataContainer!.audioFileData),
         ],
       ),
     );

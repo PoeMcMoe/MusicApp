@@ -73,7 +73,9 @@ class MusicBloc extends Bloc<MusicEvent, MusicState> {
 
   List<AudioFileData> _getSongsInFileSystem() {
     final List<dynamic> songDataJsonList =
-        json.decode(sharedPreferences.get(Strings.audioData).toString());
+        sharedPreferences.get(Strings.audioData) != null
+            ? json.decode(sharedPreferences.get(Strings.audioData).toString())
+            : [];
     final List<AudioFileData> convertedSongs = [];
 
     for (final String item in songDataJsonList) {
